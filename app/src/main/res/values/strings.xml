@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">LanguageLocalizationApp</string>
+    <string name="welcome">Welcome</string>
+    <string name="selectedLanguage">English is Selected</string>
+    <string name="English">English</string>
+    <string name="Hindi">हिंदी</string>
+    <string name="vietnamese">Tiếng Việt</string>
+    <string name="chinese">中文</string>
+    <string name="next">Next</string>
+    <string name="title">Select Language</string>
+</resources>
