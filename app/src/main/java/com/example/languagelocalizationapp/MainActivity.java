@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         txtSelectLanguage=findViewById(R.id.txtSelectLanguage);
         btnNext=findViewById(R.id.btnNext);
+        this.setTitle(getString(R.string.title));
 
         txtSelectLanguage.setOnClickListener(new View.OnClickListener() {
             @Override
