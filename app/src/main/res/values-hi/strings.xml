@@ -8,4 +8,6 @@
     <string name="chinese">中文</string>
     <string name="next">आगे</string>
     <string name="title">भाषा चुनिए</string>
+    <string name="details">विवरण</string>
+    <string name="alsoSelected">भाषा चयनित</string>
 </resources>

@@ -8,4 +8,6 @@
     <string name="chinese">中文</string>
     <string name="next">Kế tiếp</string>
     <string name="title">Chọn ngôn ngữ</string>
+    <string name="details">chi tiết</string>
+    <string name="alsoSelected">ngôn ngữ cũng được chọn</string>
 </resources>

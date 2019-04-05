@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     ListPopupWindow popupWindow;
     TextView txtSelectLanguage;
     Button btnNext;
+    String[] array;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +47,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        array=MyApp.getInstance().getStringArray("status");         //get array from resource
+
+        for(int i=0;i<array.length;i++){
+            Log.d("workStatus",array[i]);
+        }
     }
 
     private void showPopup(View view) {
@@ -68,12 +76,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 if(!alsoSelected(itemList.get(i).getLanguageCode())){
-                    LocalHelper.setLocale(MainActivity.this,itemList.get(i).getLanguageCode());
-                    LocalHelper.persist(MainActivity.this,itemList.get(i).getLanguageCode());
+                    LocalHelper.setLocale(MyApp.getInstance(),itemList.get(i).getLanguageCode());       //set app language.
                     popupWindow.dismiss();
                     recreate();
                 }else {
-                    Toast.makeText(MainActivity.this, "language also selected", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, MyApp.getInstance().getString("alsoSelected"), Toast.LENGTH_SHORT).show();
                     popupWindow.dismiss();
                 }
             }
@@ -81,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         popupWindow.show();
     }
     private boolean alsoSelected(String lan){
-        if(LocalHelper.getPersistedData(MainActivity.this,null).equals(lan)){
+        if(LocalHelper.getPersistedData(MainActivity.this,null).equals(lan)){   //check id language is selected
             return true;
         }else {
             return false;
@@ -92,4 +99,5 @@ public class MainActivity extends AppCompatActivity {
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(LocalHelper.onAttach(newBase));
     }
+
 }

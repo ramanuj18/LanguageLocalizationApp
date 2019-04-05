@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">LanguageLocalizationApp</string>
     <string name="welcome">Welcome</string>
     <string name="selectedLanguage">English is Selected</string>
@@ -8,4 +8,14 @@
     <string name="chinese">中文</string>
     <string name="next">Next</string>
     <string name="title">Select Language</string>
+    <string name="details">Details</string>
+    <string name="alsoSelected">language also selected</string>
+
+
+    <string-array name="status">
+        <item>@string/welcome</item>
+        <item>@string/selectedLanguage</item>
+        <item>@string/next</item>
+        <item>@string/title</item>
+    </string-array>
 </resources>

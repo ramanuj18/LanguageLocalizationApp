@@ -13,8 +13,8 @@ import android.util.Log;
 import java.util.Locale;
 
 public class LocalHelper {
-    private static final String SELECTED_LANGUAGE = "Locale.Helper.Selected.Language";
-
+    private static final String SELECTED_LANGUAGE = "Locale.Helper.Selected.Language";      //when app installed then app get device selected language, if you want to select specific language then uncomment second statement and comment this.
+    //private static final String SELECTED_LANGUAGE = "en";
     public static Context onAttach(Context context) {
         String lang = getPersistedData(context, Locale.getDefault().getLanguage());
         return setLocale(context, lang);
